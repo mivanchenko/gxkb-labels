@@ -21,6 +21,7 @@ cpanm --quiet --no-man-pages --notest --installdeps .
 ```bash
 ./gen-flags
 mkdir ~/.local/share/gxkb/flags.orig/
+cp -ar ~/.local/share/gxkb/flags/* ~/.local/share/gxkb/flags.orig/
 cp -ar flags/* ~/.local/share/gxkb/flags/
 ```
 Now try switching your layouts
