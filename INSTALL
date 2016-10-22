@@ -1,1 +1,0 @@
-cpanm --quiet --no-man-pages --notest --installdeps .
