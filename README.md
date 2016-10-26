@@ -1,4 +1,4 @@
-# gen-flags
+# gxkb_labels.pl
 
 A simple program to create your custom flags for [gxkb](https://github.com/zen-tools/gxkb "gxkb")
 
@@ -19,7 +19,7 @@ cpanm --quiet --no-man-pages --notest --installdeps .
 ## Usage
 
 ```bash
-./gen-flags
+./gxkb_labels.pl
 mkdir ~/.local/share/gxkb/flags.orig/
 cp -ar ~/.local/share/gxkb/flags/* ~/.local/share/gxkb/flags.orig/
 cp -ar flags/* ~/.local/share/gxkb/flags/
