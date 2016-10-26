@@ -1,6 +1,6 @@
 # gxkb_labels.pl
 
-A simple program to create your custom flags for [gxkb](https://github.com/zen-tools/gxkb "gxkb")
+A simple program to create your custom labels for [gxkb](https://github.com/zen-tools/gxkb "gxkb")
 
 # Install dependencies
 
@@ -22,6 +22,6 @@ cpanm --quiet --no-man-pages --notest --installdeps .
 ./gxkb_labels.pl
 mkdir ~/.local/share/gxkb/flags.orig/
 cp -ar ~/.local/share/gxkb/flags/* ~/.local/share/gxkb/flags.orig/
-cp -ar flags/* ~/.local/share/gxkb/flags/
+cp -ar labels/* ~/.local/share/gxkb/flags/
 ```
 Now try switching your layouts
