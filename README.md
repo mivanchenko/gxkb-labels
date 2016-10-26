@@ -19,12 +19,12 @@ cpanm --quiet --no-man-pages --notest --installdeps .
 ## Usage
 
 ```bash
-# Generate images in `labels/`
-./gxkb_labels.pl
-
 # Backup existing images
 mkdir ~/.local/share/gxkb/flags.orig/
 cp -a ~/.local/share/gxkb/flags/* ~/.local/share/gxkb/flags.orig/
+
+# Generate images in `labels/`
+./gxkb_labels.pl
 
 # Use generated images in `gxkb`
 cp -a labels/* ~/.local/share/gxkb/flags/
