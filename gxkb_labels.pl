@@ -3,12 +3,22 @@
 use strict;
 use warnings;
 
+use Getopt::Long;
 use Imager;
 
 my @LAYOUTS = qw(
-	am bg by cz de ee es fr gb ge gr hr hu is it kz
-	lt lv no pl pt ro ru se si sk sr ua us uz fi zz
+	Am Bg By Cz De Ee Es Fr Gb Ge Gr Hr Hu Is It Kz
+	Lt Lv No Pl Pt Ro Ru Se Si Sk Sr Ua Us Uz Fi Zz
 );
+
+my $case = 'capital';
+
+GetOptions(
+	'case=s' => \$case,
+	'help'   => \my $help,
+) or die usage();
+
+die usage() if $help;
 
 # Setup Imager
 
@@ -30,9 +40,12 @@ if ( ! -e $dir ) {
 # Write images
 
 foreach my $layout ( @LAYOUTS ) {
-	my $filename = "$dir/$layout.png";
 
 	my $img = Imager->new( xsize => 24, ysize => 24, channels => 4 );
+
+	$layout = ( $case eq 'upper' ) ? uc $layout
+	        : ( $case eq 'lower' ) ? lc $layout
+	        : $layout;
 
 	$img->string(
 		font  => $font,
@@ -44,6 +57,10 @@ foreach my $layout ( @LAYOUTS ) {
 		aa    => 1,
 	);
 
+	my $filename = "$dir/\L$layout.png";
+
 	$img->write( file => $filename, type => 'png' )
 		or die "Cannot write [$filename]: ", $img->errstr;
 }
+
+sub usage { "\nUsage:\n$0 --case=[upper|lower]\n\n" }
