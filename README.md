@@ -16,7 +16,7 @@ sudo apt-get install libimager-perl
 cpanm --quiet --no-man-pages --notest --installdeps .
 ```
 
-## Usage
+# Usage
 
 ```bash
 # Backup existing images
