@@ -24,6 +24,9 @@ die usage() if $help;
 
 my $color = Imager::Color->new( xname => 'yellow' );
 
+my $shadow_color = Imager::Color->new( xname => 'black' );
+$shadow_color->set( 'alpha' => 128 );
+
 my $font = Imager::Font->new(
 	file => 'Inconsolata.otf',
 	color => $color,
@@ -47,6 +50,18 @@ foreach my $layout ( @LAYOUTS ) {
 	        : ( $case eq 'lower' ) ? lc $layout
 	        : $layout;
 
+	# Draw shadow
+	$img->string(
+		font  => $font,
+		text  => $layout,
+		x     => 2,
+		y     => 19,
+		size  => 22,
+		color => $shadow_color,
+		aa    => 1,
+	);
+
+	# Draw text
 	$img->string(
 		font  => $font,
 		text  => $layout,
