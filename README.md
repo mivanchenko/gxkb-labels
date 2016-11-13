@@ -4,13 +4,13 @@ A simple program to create your custom labels for [gxkb](https://github.com/zen-
 
 # Install dependencies
 
-## Debian
+### Debian
 
 ```bash
 sudo apt-get install libimager-perl
 ```
 
-## Others
+### Others
 
 ```bash
 cpanm --quiet --no-man-pages --notest --installdeps .
