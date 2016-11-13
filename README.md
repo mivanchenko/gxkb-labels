@@ -2,7 +2,7 @@
 
 A simple program to create your custom labels for [gxkb](https://github.com/zen-tools/gxkb "gxkb")
 
-# Install dependencies
+# Dependencies
 
 ### Debian
 
